@@ -41,6 +41,142 @@ if (isset($_POST['emp_search'])) {
         echo "<script> alert('No Such Staff Member Exists !!'); </script>";
     }
 }
+
+if (isset($_POST['emp_update'])) {
+
+    $NIC = $_POST['emp_nic'];
+    $empID = $_POST['emp_id'];
+    $firstName = $_POST['emp_fname'];
+    $lastName = $_POST['emp_lname'];
+    $gender = $_POST['emp_gender'];
+    $contactNumber = $_POST['emp_contact'];
+    $address = $_POST['emp_address'];
+    $email = $_POST['emp_email'];
+    $jobType = $_POST['emp_jobtype'];
+    $hostel = $_POST['emp_hostel'];
+    $workedHours = $_POST['emp_worked_hours'];
+    $faculty = $_POST['emp_faculty'];
+    $startDate = $_POST['emp_startDate'];
+    $password = $_POST['emp_password'];
+    $new_password = $_POST['emp_npassword'];
+    $confirm_password = $_POST['emp_cpassword'];
+
+
+    $queryForHostel = "SELECT HostelID FROM HOSTEL WHERE HostelName = '{$hostel}'";
+    $resultForHostel = mysqli_query($conn, $queryForHostel);
+    if ($record = mysqli_fetch_assoc($resultForHostel)) {
+        $hosteID = $record['HostelID'];
+    } else {
+        echo "<script> alert('No Such Hostel Exists !!'); </script>";
+    }
+
+    if ($jobType == "Warden" or $jobType == "Sub Warden") {
+        if ($new_password == $confirm_password) {
+
+            $password = $new_password;
+
+            $query_For_Warden_SubWarden = "UPDATE Warden_SubWarden, Login  SET 
+                Faculty = '{$faculty}',
+                StartDate = '{$startDate}',
+                UserName = '{$email}',
+                Password = '{$new_password}'
+                WHERE Warden_SubWarden.LoginID = Login.LoginID AND EmpID = '{$empID}' ";
+
+            $result_For_Warden_SubWarden = mysqli_query($conn, $query_For_Warden_SubWarden);
+            if ($result_For_Warden_SubWarden) {
+                $query = "UPDATE Staff SET 
+                    Emp_NIC = '{$NIC}',
+                    Emp_FName = '{$firstName}',
+                    Emp_LName = '{$lastName}',
+                    Emp_Gender = '{$gender}',
+                    Emp_TelNum = '{$contactNumber}',
+                    Emp_Address = '{$address}',
+                    Emp_Email = '{$email}',
+                    Emp_JobType = '{$jobType}',
+                    HostelID = '{$hosteID}'
+                    WHERE EmpID = '{$empID}' ";
+
+                $result = mysqli_query($conn, $query);
+                if ($result) {
+                    echo "<script> alert('Record Updated Successfully'); </script>";
+                } else {
+                    echo "<script> alert('Record Cannot Update'); </script>";
+                }
+            } else {
+                echo "<script> alert('Something Wrong'); </script>";
+            }
+        } else {
+            echo "<script> alert('Password doesn\'t match'); </script>";
+        }
+    } else {
+        $query_For_Minor_Staff = "UPDATE MinorStaff SET 
+            WorkedHours = '{$workedHours}'
+            WHERE EmpID = '{$empID}' ";
+
+        $result_For_Minor_Staff = mysqli_query($conn, $query_For_Minor_Staff);
+        if ($result_For_Minor_Staff) {
+            $query = "UPDATE Staff SET 
+                Emp_NIC = '{$NIC}',
+                Emp_FName = '{$firstName}',
+                Emp_LName = '{$lastName}',
+                Emp_Gender = '{$gender}',
+                Emp_TelNum = '{$contactNumber}',
+                Emp_Address = '{$address}',
+                Emp_Email = '{$email}',
+                Emp_JobType = '{$jobType}',
+                HostelID = '{$hosteID}'
+                WHERE EmpID = '{$empID}' ";
+
+            $result = mysqli_query($conn, $query);
+            if ($result) {
+                echo "<script> alert('Record Updated Successfully'); </script>";
+            } else {
+                echo "<script> alert('Record Cannot Update'); </script>";
+            }
+        } else {
+            echo "<script> alert('Something Wrong'); </script>";
+        }
+    }
+}
+
+if (isset($_POST['emp_delete'])) {
+    $empID = $_POST['emp_id'];
+    $jobType = $_POST['emp_jobtype'];
+
+    if ($jobType == "Warden" or $jobType == "Sub Warden") {
+        $query = "SELECT LoginID FROM Warden_SubWarden WHERE EmpID = '{$empID}'";
+        $result = mysqli_query($conn, $query);
+        if ($record = mysqli_fetch_assoc($result)) {
+            $loginID = $record['LoginID'];
+
+            $query1 = "DELETE FROM STAFF WHERE EmpID = '{$empID}'";
+            $query2 = "DELETE FROM LOGIN WHERE LoginID = '{$loginID}'";
+
+            $result1 = mysqli_query($conn, $query1);
+            $result2 = mysqli_query($conn, $query2);
+            if ($result1 and $result2) {
+                $empID = '';
+                $jobType = '';
+                echo "<script> alert('Record Deleted Successfully'); </script>";
+            } else {
+                echo "<script> alert('Record Cannot Delete'); </script>";
+            }
+        } else {
+            echo "<script> alert('No Such LoginID Exists !!'); </script>";
+        }
+    } else {
+        $query1 = "DELETE FROM STAFF WHERE EmpID = '{$empID}'";
+        $result1 = mysqli_query($conn, $query1);
+        if ($result1) {
+            $empID = '';
+            $jobType = '';
+            echo "<script> alert('Record Deleted Successfully'); </script>";
+        } else {
+            echo "<script> alert('Record Cannot Delete'); </script>";
+        }
+    }
+}
+
 ?>
 
 
@@ -236,7 +372,7 @@ if (isset($_POST['emp_search'])) {
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Password: </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="emp_password" id="emp_password" class="form-control" value="<?php echo (isset($password)) ? $password : ''; ?>">
+                                                    <input type="text" name="emp_password" id="emp_password" class="form-control" readonly value="<?php echo (isset($password)) ? $password : ''; ?>">
                                                 </div>
                                             </div>
 
@@ -260,7 +396,7 @@ if (isset($_POST['emp_search'])) {
 
                             <div class="col-sm-8 col-sm-offset-4">
                                 <input type="submit" id="emp_update" name="emp_update" Value="Update" class="btn btn-primary">
-                                <button type="button" name="emp_delete" id="emp_delete" class="btn btn-primary"> Delete </button>
+                                <button type="submit" name="emp_delete" id="emp_delete" class="btn btn-primary"> Delete </button>
                             </div>
                         </form>
                     </div>
