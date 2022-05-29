@@ -460,27 +460,27 @@ INSERT INTO Admin VALUES
 
 
 INSERT INTO Staff VALUES
-    ('E001','H001','A.K.','Wickramasooriya','19568989001','0779406168','awickramasooriya@gmail.com','Male','Karapitiya, Galle','Warden'),
-    ('E002','H001','M.M.L.','Deshapriya','19568989002','0713029930','lalithdehsapriya@gmail.com','Male','Kandy','Sub Warden'),
-    ('E003','H002','Dr.Asitha','Bandaranayake','19568989003','0715117771','asithab@gmail.com','Male','Gampaha','Warden'),
-    ('E004','H002','W.G.S','Karunasiri','19568989004','0712285793','karunasiri@yahoo.com','Male','Kaluthara','Sub Warden'),
-    ('E005','H006','J.A.S.C','Jaysinghe','19568989011','0772209662','supunochamara@gmail.com','Male','Rathnapura','Warden'),
-    ('E006','H006','A.N.S.','Kumara','19568989012','0719332200','nalaka.uop@gmail.com','Male','Kandy','Sub Warden'),
-    ('E007','H007','Dr.H.M.K. Shantha','Wanninayake','19568989013','0718480806','shanthaw2003@yahoo.com','Male','Galle','Warden'),
-    ('E008','H007','P.N.B.','Wijekoon','19568989014','0714705323','prsadnirosha@gmail.com','Male','Badulla','Sub Warden'),
-    ('E009','H008','Dr. Muditha Prasannajith','Perera','19568989016','0776657847','mudithpras@gmail.com','Male','Ampara','Warden'),
-    ('E010','H008','D.','Malwattage','19568989015','0718133481','malwattage1702@gmail.com','Male','Gampaha','Sub Warden'),
-    ('E011','H011','Dr. Malini','Balamayuran','19568989021','0812392068','maliniparamaguru@gmail.com','Female','Badulla','Warden'),
-    ('E012','H011','Mrs.N.R.','Gangodathanna','19568989022','0812392027','gangodathanna456@gmail.com','Female','Mathara','Sub Warden'),
-    ('E013','H013','Prof.Mallika','Pinnawala','19568989025','0718188147','mallika.pinnawala@gmail.com','Female','Ampara','Warden'),
-    ('E014','H013','M.D.T.M.','Menaka','19568989026','0713508800','mbandara1@hotmail.com','Female','Kurunegala','Sub Warden'),
-    ('E015','H016','Dr.A.M.Chammi','P.K.Attanayake','19568989031','0813820769','chammiatt@pdn.ac.lk','Female','Kandy','Warden'),
-    ('E016','H016','J.M.U.S.K.','Yatigammana','19568989032','0779406168','awickramasooriya@gmail.com','Female','Badulla','Sub Warden'),
-    ('E017','H006','K.J.M','Attanayake','19568989033','0713578940','attanayake89@gmail.com','Male','Rathnapura','Clerk'),
-    ('E018','H011','A.W.D','Wijeyrathna','19568989034','0772348767','wijeyrathna12@gmail.com','Male','Kandy','Security'),
-    ('E019','H016','P.S.K.','Alahakoon','19568989013','0778654782','alahakoon456@yahoo.com','Female','Nuwareliya','Cleaner'),
-    ('E020','H003','A.R.J','Jayaweera','19568989014','0715237877','jayaweera124@gmail.com','Male','Badulla','Security'),
-    ('E021','H010','G.R.F.','Perera','19568989016','0712323445','pereragr@gmail.com','Female','Ampara','Clerk');
+    ('E001','H001','A.K.','Wickramasooriya','19568989001','077-9406168','awickramasooriya@gmail.com','Male','Karapitiya, Galle','Warden'),
+    ('E002','H001','M.M.L.','Deshapriya','19568989002','071-3029930','lalithdehsapriya@gmail.com','Male','Kandy','Sub Warden'),
+    ('E003','H002','Dr.Asitha','Bandaranayake','19568989003','071-5117771','asithab@gmail.com','Male','Gampaha','Warden'),
+    ('E004','H002','W.G.S','Karunasiri','19568989004','071-2285793','karunasiri@yahoo.com','Male','Kaluthara','Sub Warden'),
+    ('E005','H006','J.A.S.C','Jaysinghe','19568989005','077-2209662','supunochamara@gmail.com','Male','Rathnapura','Warden'),
+    ('E006','H006','A.N.S.','Kumara','19568989006','071-9332200','nalaka.uop@gmail.com','Male','Kandy','Sub Warden'),
+    ('E007','H007','Dr.H.M.K. Shantha','Wanninayake','19568989007','071-8480806','shanthaw2003@yahoo.com','Male','Galle','Warden'),
+    ('E008','H007','P.N.B.','Wijekoon','19568989008','071-4705323','prsadnirosha@gmail.com','Male','Badulla','Sub Warden'),
+    ('E009','H008','Dr. Muditha Prasannajith','Perera','19568989009','077-6657847','mudithpras@gmail.com','Male','Ampara','Warden'),
+    ('E010','H008','D.','Malwattage','19568989010','071-8133481','malwattage1702@gmail.com','Male','Gampaha','Sub Warden'),
+    ('E011','H011','Dr. Malini','Balamayuran','19568989011','081-2392068','maliniparamaguru@gmail.com','Female','Badulla','Warden'),
+    ('E012','H011','Mrs.N.R.','Gangodathanna','19568989012','081-2392027','gangodathanna456@gmail.com','Female','Mathara','Sub Warden'),
+    ('E013','H013','Prof.Mallika','Pinnawala','19568989013','071-8188147','mallika.pinnawala@gmail.com','Female','Ampara','Warden'),
+    ('E014','H013','M.D.T.M.','Menaka','19568989014','071-3508800','mbandara1@hotmail.com','Female','Kurunegala','Sub Warden'),
+    ('E015','H016','Dr.A.M.Chammi','P.K.Attanayake','19568989015','081-3820769','chammiatt@pdn.ac.lk','Female','Kandy','Warden'),
+    ('E016','H016','J.M.U.S.K.','Yatigammana','19568989016','077-9406168','awickramasooriya@gmail.com','Female','Badulla','Sub Warden'),
+    ('E017','H006','K.J.M','Attanayake','19568989017','071-3578940','attanayake89@gmail.com','Male','Rathnapura','Clerk'),
+    ('E018','H011','A.W.D','Wijeyrathna','19568989018','077-2348767','wijeyrathna12@gmail.com','Male','Kandy','Security'),
+    ('E019','H016','P.S.K.','Alahakoon','19568989019','077-8654782','alahakoon456@yahoo.com','Female','Nuwareliya','Cleaner'),
+    ('E020','H003','A.R.J','Jayaweera','19568989020','071-5237877','jayaweera124@gmail.com','Male','Badulla','Security'),
+    ('E021','H010','G.R.F.','Perera','19568989021','071-2323445','pereragr@gmail.com','Female','Ampara','Clerk');
 
 
 

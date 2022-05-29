@@ -197,8 +197,9 @@ if (isset($_POST['stu_delete'])) {
                                                 <label class="col-sm-2 control-label"> Gender : </label>
                                                 <div class="col-sm-8">
                                                     <select name="stu_gender" id="stu_gender" class="form-control">
-                                                        <option value="Male">Male</option>
-                                                        <option value="Female" <?php if ($gender == "Female") echo ' selected="selected"' ?>>Female</option>
+                                                        <option value="Select Gender">Select Gender</option>
+                                                        <option value="Male" <?php if (isset($gender) and $gender == "Male") echo ' selected="selected"' ?>>Male</option>
+                                                        <option value="Female" <?php if (isset($gender) and $gender == "Female") echo ' selected="selected"' ?>>Female</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -228,15 +229,16 @@ if (isset($_POST['stu_delete'])) {
                                                 <label class="col-sm-2 control-label"> Faculty : </label>
                                                 <div class="col-sm-8">
                                                     <select name="stu_faculty" id="stu_faculty" class="form-control">
-                                                        <option value="Faculty of Agriculture">Faculty of Agriculture</option>
-                                                        <option value="Faculty of Allied Health Sciences" <?php if ($faculty == "Faculty of Allied Health Sciences") echo ' selected="selected"' ?>>Faculty of Allied Health Sciences</option>
-                                                        <option value="Faculty of Arts" <?php if ($faculty == "Faculty of Arts") echo ' selected="selected"' ?>>Faculty of Arts</option>
-                                                        <option value="Faculty of Dental Sciences" <?php if ($faculty == "Faculty of Dental Sciences") echo ' selected="selected"' ?>>Faculty of Dental Sciences</option>
-                                                        <option value="Faculty of Engineering" <?php if ($faculty == "Faculty of Engineering") echo ' selected="selected"' ?>>Faculty of Engineering</option>
-                                                        <option value="Faculty of Management" <?php if ($faculty == "Faculty of Management") echo ' selected="selected"' ?>>Faculty of Management</option>
-                                                        <option value="Faculty of Medicine" <?php if ($faculty == "Faculty of Medicine") echo ' selected="selected"' ?>>Faculty of Medicine</option>
-                                                        <option value="Faculty of Science" <?php if ($faculty == "Faculty of Science") echo ' selected="selected"' ?>>Faculty of Science</option>
-                                                        <option value="Faculty of Veterinary Medicine and Animal Science" <?php if ($faculty == "Faculty of Veterinary Medicine and Animal Science") echo ' selected="selected"' ?>>Faculty of Veterinary Medicine and Animal Science</option>
+                                                        <option value="Select Faculty">Select Faculty</option>
+                                                        <option value="Faculty of Agriculture" <?php if (isset($faculty) and $faculty == "Faculty of Agriculture") echo ' selected="selected"' ?>>Faculty of Agriculture</option>
+                                                        <option value="Faculty of Allied Health Sciences" <?php if (isset($faculty) and $faculty == "Faculty of Allied Health Sciences") echo ' selected="selected"' ?>>Faculty of Allied Health Sciences</option>
+                                                        <option value="Faculty of Arts" <?php if (isset($faculty) and $faculty == "Faculty of Arts") echo ' selected="selected"' ?>>Faculty of Arts</option>
+                                                        <option value="Faculty of Dental Sciences" <?php if (isset($faculty) and $faculty == "Faculty of Dental Sciences") echo ' selected="selected"' ?>>Faculty of Dental Sciences</option>
+                                                        <option value="Faculty of Engineering" <?php if (isset($faculty) and $faculty == "Faculty of Engineering") echo ' selected="selected"' ?>>Faculty of Engineering</option>
+                                                        <option value="Faculty of Management" <?php if (isset($faculty) and $faculty == "Faculty of Management") echo ' selected="selected"' ?>>Faculty of Management</option>
+                                                        <option value="Faculty of Medicine" <?php if (isset($faculty) and $faculty == "Faculty of Medicine") echo ' selected="selected"' ?>>Faculty of Medicine</option>
+                                                        <option value="Faculty of Science" <?php if (isset($faculty) and $faculty == "Faculty of Science") echo ' selected="selected"' ?>>Faculty of Science</option>
+                                                        <option value="Faculty of Veterinary Medicine and Animal Science" <?php if (isset($faculty) and $faculty == "Faculty of Veterinary Medicine and Animal Science") echo ' selected="selected"' ?>>Faculty of Veterinary Medicine and Animal Science</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -245,11 +247,12 @@ if (isset($_POST['stu_delete'])) {
                                                 <label class="col-sm-2 control-label"> Batch : </label>
                                                 <div class="col-sm-8">
                                                     <select name="stu_batch" id="stu_batch" class="form-control">
-                                                        <option value="20 Batch">20 Batch</option>
-                                                        <option value="19 Batch" <?php if ($batch == "19 Batch") echo ' selected="selected"' ?>>19 Batch</option>
-                                                        <option value="18 Batch" <?php if ($batch == "18 Batch") echo ' selected="selected"' ?>>18 Batch</option>
-                                                        <option value="17 Batch" <?php if ($batch == "17 Batch") echo ' selected="selected"' ?>>17 Batch</option>
-                                                        <option value="16 Batch" <?php if ($batch == "16 Batch") echo ' selected="selected"' ?>>16 Batch</option>
+                                                        <option value="Select Batch">Select Batch</option>
+                                                        <option value="20 Batch" <?php if (isset($batch) and  $batch == "19 Batch") echo ' selected="selected"' ?>>20 Batch</option>
+                                                        <option value="19 Batch" <?php if (isset($batch) and $batch == "19 Batch") echo ' selected="selected"' ?>>19 Batch</option>
+                                                        <option value="18 Batch" <?php if (isset($batch) and $batch == "18 Batch") echo ' selected="selected"' ?>>18 Batch</option>
+                                                        <option value="17 Batch" <?php if (isset($batch) and $batch == "17 Batch") echo ' selected="selected"' ?>>17 Batch</option>
+                                                        <option value="16 Batch" <?php if (isset($batch) and $batch == "16 Batch") echo ' selected="selected"' ?>>16 Batch</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -271,26 +274,27 @@ if (isset($_POST['stu_delete'])) {
                                                 <label class="col-sm-2 control-label"> Hostel : </label>
                                                 <div class="col-sm-8">
                                                     <select name="stu_hostel" id="stu_hostel" class="form-control">
-                                                        <option value="Arunachalam Hall">Arunachalam Hall</option>
-                                                        <option value="Akbar Nell Hall" <?php if ($hostel == "Akbar Nell Hall") echo ' selected="selected"' ?>>Akbar Nell Hall</option>
-                                                        <option value="New Akbar Hall" <?php if ($hostel == "New Akbar Hall") echo ' selected="selected"' ?>>New Akbar Hall</option>
-                                                        <option value="Marrs Hall" <?php if ($hostel == "Marrs Hall") echo ' selected="selected"' ?>>Marrs Hall</option>
-                                                        <option value="Marcus Fernando Hall" <?php if ($hostel == "Marcus Fernando Hall") echo ' selected="selected"' ?>>Marcus Fernando Hall</option>
-                                                        <option value="Jayathilake Hall" <?php if ($hostel == "Jayathilake Hall") echo ' selected="selected"' ?>>Jayathilake Hall</option>
-                                                        <option value="Hindagala Hall" <?php if ($hostel == "Hindagala Hall") echo ' selected="selected"' ?>>Hindagala Hall</option>
-                                                        <option value="James Peris Hall" <?php if ($hostel == "James Peris Hall") echo ' selected="selected"' ?>>James Peris Hall</option>
-                                                        <option value="Ivor Jennings Hall" <?php if ($hostel == "Ivor Jennings Hall") echo ' selected="selected"' ?>>Ivor Jennings Hall</option>
-                                                        <option value="Senaka Bibile Hall" <?php if ($hostel == "Senaka Bibile Hall") echo ' selected="selected"' ?>>Senaka Bibile Hall</option>
-                                                        <option value="Ramanathan Hall" <?php if ($hostel == "Ramanathan Hall") echo ' selected="selected"' ?>>Ramanathan Hall</option>
-                                                        <option value="Sangamitta Hall" <?php if ($hostel == "Sangamitta Hall") echo ' selected="selected"' ?>>Sangamitta Hall</option>
-                                                        <option value="Hilda Obeysekara Hall" <?php if ($hostel == "Hilda Obeysekara Hall") echo ' selected="selected"' ?>>Hilda Obeysekara Hall</option>
-                                                        <option value="Wijewardana Hall" <?php if ($hostel == "Wijewardana Hall") echo ' selected="selected"' ?>>Wijewardana Hall</option>
-                                                        <option value="Gunapala Malalasekara" <?php if ($hostel == "Gunapala Malalasekara") echo ' selected="selected"' ?>>Gunapala Malalasekara</option>
-                                                        <option value="Ediriweera Sarachchandra" <?php if ($hostel == "Ediriweera Sarachchandra") echo ' selected="selected"' ?>>Ediriweera Sarachchandra</option>
-                                                        <option value="Sarasavi Madura Hall" <?php if ($hostel == "Sarasavi Madura Hall") echo ' selected="selected"' ?>>Sarasavi Madura Hall</option>
-                                                        <option value="Sarasaviuyana Hall" <?php if ($hostel == "Sarasaviuyana Hall") echo ' selected="selected"' ?>>Sarasaviuyana Hall</option>
-                                                        <option value="Wilagedara Bikku Hostel" <?php if ($hostel == "Wilagedara Bikku Hostel") echo ' selected="selected"' ?>>Wilagedara Bikku Hostel</option>
-                                                        <option value="Kehelpannala Bikku Hostel" <?php if ($hostel == "Kehelpannala Bikku Hostel") echo ' selected="selected"' ?>>Kehelpannala Bikku Hostel</option>
+                                                        <option value="Select Hostel">Select Hostel</option>
+                                                        <option value="Arunachalam Hall" <?php if (isset($hostel) and $hostel == "Arunachalam Hall") echo ' selected="selected"' ?>>Arunachalam Hall</option>
+                                                        <option value="Akbar Nell Hall" <?php if (isset($hostel) and $hostel == "Akbar Nell Hall") echo ' selected="selected"' ?>>Akbar Nell Hall</option>
+                                                        <option value="New Akbar Hall" <?php if (isset($hostel) and $hostel == "New Akbar Hall") echo ' selected="selected"' ?>>New Akbar Hall</option>
+                                                        <option value="Marrs Hall" <?php if (isset($hostel) and $hostel == "Marrs Hall") echo ' selected="selected"' ?>>Marrs Hall</option>
+                                                        <option value="Marcus Fernando Hall" <?php if (isset($hostel) and $hostel == "Marcus Fernando Hall") echo ' selected="selected"' ?>>Marcus Fernando Hall</option>
+                                                        <option value="Jayathilake Hall" <?php if (isset($hostel) and $hostel == "Jayathilake Hall") echo ' selected="selected"' ?>>Jayathilake Hall</option>
+                                                        <option value="Hindagala Hall" <?php if (isset($hostel) and $hostel == "Hindagala Hall") echo ' selected="selected"' ?>>Hindagala Hall</option>
+                                                        <option value="James Peris Hall" <?php if (isset($hostel) and $hostel == "James Peris Hall") echo ' selected="selected"' ?>>James Peris Hall</option>
+                                                        <option value="Ivor Jennings Hall" <?php if (isset($hostel) and $hostel == "Ivor Jennings Hall") echo ' selected="selected"' ?>>Ivor Jennings Hall</option>
+                                                        <option value="Senaka Bibile Hall" <?php if (isset($hostel) and $hostel == "Senaka Bibile Hall") echo ' selected="selected"' ?>>Senaka Bibile Hall</option>
+                                                        <option value="Ramanathan Hall" <?php if (isset($hostel) and $hostel == "Ramanathan Hall") echo ' selected="selected"' ?>>Ramanathan Hall</option>
+                                                        <option value="Sangamitta Hall" <?php if (isset($hostel) and $hostel == "Sangamitta Hall") echo ' selected="selected"' ?>>Sangamitta Hall</option>
+                                                        <option value="Hilda Obeysekara Hall" <?php if (isset($hostel) and $hostel == "Hilda Obeysekara Hall") echo ' selected="selected"' ?>>Hilda Obeysekara Hall</option>
+                                                        <option value="Wijewardana Hall" <?php if (isset($hostel) and $hostel == "Wijewardana Hall") echo ' selected="selected"' ?>>Wijewardana Hall</option>
+                                                        <option value="Gunapala Malalasekara" <?php if (isset($hostel) and $hostel == "Gunapala Malalasekara") echo ' selected="selected"' ?>>Gunapala Malalasekara</option>
+                                                        <option value="Ediriweera Sarachchandra" <?php if (isset($hostel) and $hostel == "Ediriweera Sarachchandra") echo ' selected="selected"' ?>>Ediriweera Sarachchandra</option>
+                                                        <option value="Sarasavi Madura Hall" <?php if (isset($hostel) and $hostel == "Sarasavi Madura Hall") echo ' selected="selected"' ?>>Sarasavi Madura Hall</option>
+                                                        <option value="Sarasaviuyana Hall" <?php if (isset($hostel) and $hostel == "Sarasaviuyana Hall") echo ' selected="selected"' ?>>Sarasaviuyana Hall</option>
+                                                        <option value="Wilagedara Bikku Hostel" <?php if (isset($hostel) and $hostel == "Wilagedara Bikku Hostel") echo ' selected="selected"' ?>>Wilagedara Bikku Hostel</option>
+                                                        <option value="Kehelpannala Bikku Hostel" <?php if (isset($hostel) and $hostel == "Kehelpannala Bikku Hostel") echo ' selected="selected"' ?>>Kehelpannala Bikku Hostel</option>
                                                     </select>
                                                 </div>
                                             </div>
