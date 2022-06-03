@@ -214,7 +214,7 @@ if (isset($_POST['stu_delete'])) {
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label"> Contact No : </label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" name="stu_contact" id="stu_contact" class="form-control" pattern="[0-9]{3}-[0-9]{7}" value="<?php echo (isset($contactNumber)) ? $contactNumber : ''; ?>">
+                                                    <input type="tel" name="stu_contact" id="stu_contact" class="form-control" pattern="[0-9]{3}-[0-9]{7}" title="Format : 0XX-XXXXXXX" value="<?php echo (isset($contactNumber)) ? $contactNumber : ''; ?>">
                                                 </div>
                                             </div>
 
@@ -323,7 +323,7 @@ if (isset($_POST['stu_delete'])) {
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label"> Amount Paid : </label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="stu_amount" id="stu_amount" class="form-control" value="<?php echo (isset($amountPaid)) ? $amountPaid : ''; ?>">
+                                                    <input type="text" name="stu_amount" id="stu_amount" class="form-control" pattern="LKR [0-9]{3}/=" title="Format : LKR XXX/=" value="<?php echo (isset($amountPaid)) ? $amountPaid : ''; ?>">
                                                 </div>
                                             </div>
 
@@ -362,7 +362,7 @@ if (isset($_POST['stu_delete'])) {
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label"> Contact No : </label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" name="gur_contact" id="gur_contact" class="form-control" pattern="[0-9]{3}-[0-9]{7}" value="<?php echo (isset($guar_telnum)) ? $guar_telnum : ''; ?>">
+                                                    <input type="tel" name="gur_contact" id="gur_contact" class="form-control" pattern="[0-9]{3}-[0-9]{7}" title="Format : 0XX-XXXXXXX" value="<?php echo (isset($guar_telnum)) ? $guar_telnum : ''; ?>">
                                                 </div>
                                             </div>
 

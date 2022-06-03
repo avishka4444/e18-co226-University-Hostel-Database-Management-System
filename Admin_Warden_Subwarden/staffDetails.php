@@ -262,7 +262,7 @@ if (isset($_POST['emp_delete'])) {
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label"> Contact No : </label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" name="emp_contact" id="emp_contact" class="form-control" pattern="[0-9]{3}-[0-9]{7}" value="<?php echo (isset($contactNumber)) ? $contactNumber : ''; ?>">
+                                                    <input type="tel" name="emp_contact" id="emp_contact" class="form-control" pattern="[0-9]{3}-[0-9]{7}" title="Format : 0XX-XXXXXXX" value="<?php echo (isset($contactNumber)) ? $contactNumber : ''; ?>">
                                                 </div>
                                             </div>
 
